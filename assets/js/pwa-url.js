@@ -11,6 +11,7 @@ var eventHandler = function (event) {
         // Open link in same tab
         event.preventDefault();
         window.location = event.target.href;
+        alert("Hello");
     }
 }
 window.addEventListener('click', eventHandler, false);
