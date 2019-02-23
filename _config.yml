@@ -1,7 +1,7 @@
 # Site
 title:              SG &#9829 IU
 bio:                'Singapore IU Fan Club'
-description:        "SG &#9829 IU is an IU Fan Club for Singaenas to show our love and support for our constant source of strength and inspiration!"
+description:        "SG &#9829 IU (Singapore Heart IU) is an IU Fan Club for Singaenas to show our love and support for our constant source of strength and inspiration!"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
@@ -33,7 +33,7 @@ sass:
 # if you don't have any of social below, comment the line.
 #google:
   #plus:            #username
-  #analytics:
+  analytics:        UA-135059257-1
   #verify:
   #ad-client:
   #ad-slot:
