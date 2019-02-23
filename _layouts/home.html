@@ -11,6 +11,7 @@ layout: compress
 </head>
 <body>
     {% include nav.html %}
+    
     <!-- Header -->
     <header class="header flex terence-custom-translucent" role="banner">
         <div class="container animated fadeIn">
@@ -56,5 +57,20 @@ layout: compress
         </div>
     </header>
     {% include scripts.html %}
+    
+    <!-- START OF @TerenceTanWT CUSTOM BANNER OVERLAY -->
+    <!-- overlay-terence.css and overlay-terence.js are linked in head.html. To disable banner, simply hide in by modifying overlay-terence.css under .display -->
+    <div id="overlay" onclick="overlayOff()">
+		<div id="overlay-banner">
+			<b> Upcoming Event!</b>
+			<br>
+			<font size="1px"> Click on the banner to find out more. Click outside to close banner. </font>
+			<br>
+			<img id="banner_img" onclick="overlayRedirect()" src="/assets/img/cupsleeve.png"></img>
+		</div>
+	</div>
+	<script> window.onload = overlayOn() </script>
+    <!-- END OF @TerenceTanWT CUSTOM BANNER OVERLAY -->
+    
 </body>
 </html>

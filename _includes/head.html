@@ -86,3 +86,7 @@
     {% unless feature contains 'http://' or feature contains 'https://' %}{% capture feature %}{{ site.url }}/{{ feature }}{% endcapture %}{% endunless %}
     <style type="text/css">.feature {background-image:url({{ feature }});}</style>
     {% endif %}
+    
+    <!-- CSS and JS Files for @TerenceTanWT custom overlay banner -->
+    <link rel="stylesheet" href="/assets/css/overlay-terence.css">
+    <script src="/assets/js/overlay-terence.js"></script>
