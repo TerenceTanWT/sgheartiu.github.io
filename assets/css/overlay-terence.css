@@ -16,6 +16,7 @@
 
 #overlay-banner{
 	position: absolute;
+	display: none;
 	top: 50%;
 	left: 50%;
 	font-size: 20px;
