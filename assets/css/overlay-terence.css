@@ -28,6 +28,7 @@
 }
 
 #banner-overlay-img{
+	display: none;
 	max-width: auto;
 	height: 90%;
 }
