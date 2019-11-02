@@ -11,3 +11,11 @@ function overlayOff() {
 function overlayRedirect() {
 	window.open("https://www.facebook.com/sgheartiu", "_blank");
 }
+
+function overlayBlueOn() {
+  document.getElementById("overlay-blue").style.display = "block";
+}
+
+function overlayBlueOff() {
+  document.getElementById("overlay-blue").style.display = "none";
+}

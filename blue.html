@@ -1,0 +1,59 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+<head>
+    <title>IU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/overlay-terence.css">
+    <script src="/assets/js/overlay-terence.js"></script>
+    <script src="/assets/js/NoSleep.min.js"></script> 
+</head>
+<body bgcolor="#71ABFA">
+	<!--<input type="button" id="toggleWakeLock" value="Wake Lock is disabled" />-->
+	
+	
+	<!-- START OF NoSleep.js -->
+    <script>
+      var noSleep = new NoSleep();
+
+      var wakeLockEnabled = false;
+      var toggleEl = document.querySelector("#toggleWakeLock");
+      toggleEl.addEventListener('click', function() {
+        if (!wakeLockEnabled) {
+          noSleep.enable(); // keep the screen on!
+          wakeLockEnabled = true;
+          toggleEl.value = "Wake Lock is enabled";
+          document.body.style.backgroundColor = "green";
+        } else {
+          noSleep.disable(); // let the screen turn off.
+          wakeLockEnabled = false;
+          toggleEl.value = "Wake Lock is disabled";
+          document.body.style.backgroundColor = "";
+        }
+      }, false);
+    </script>
+	<!-- END OF NoSleep.js -->
+	
+	
+    <!-- START OF @TerenceTanWT CUSTOM BANNER OVERLAY -->
+    <!-- overlay-terence.css and overlay-terence.js are linked in head.html. To disable banner, simply hide in by modifying overlay-terence.css under .display -->
+    <div id="overlay-blue" onclick="overlayBlueOff()">
+		<div id="overlay-banner-blue">
+			<b> Upcoming Event!</b>
+			<br>
+			<h3> HELLO WORLD! </h3>
+			<br>
+			Just some text here.
+		</div>
+	</div>
+	<script> window.onload = setTimeout(overlayBlueOn,3000); </script> <!-- 3sec delay before banner popup. Comment out this line to disable banner -->
+    <!-- END OF @TerenceTanWT CUSTOM BANNER OVERLAY -->
+    
+    
+</body>
+</html>
