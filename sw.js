@@ -3,7 +3,7 @@ importScripts('/assets/js/cache-polyfill.js');
 
 self.addEventListener('install', function(e) {
  e.waitUntil(
-   caches.open('SHIU').then(function(cache) {
+   caches.open('SGHIU').then(function(cache) {
      return cache.addAll([
        '/',
        '/index.html',
