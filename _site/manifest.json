@@ -4,5 +4,17 @@
   "lang": "en-SG",
   "start_url": "https://www.sgheartiu.com/",
   "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/img/favicons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/favicons/android-chrome-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    }
+  ],
   "display": "standalone"
 }
