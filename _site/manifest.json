@@ -2,7 +2,7 @@
   "name": "SG ♥ IU",
   "short_name": "SG ♥ IU",
   "lang": "en-SG",
-  "start_url": "/",
+  "start_url": "https://www.sgheartiu.com/",
   "scope": "/",
   "display": "standalone"
 }
