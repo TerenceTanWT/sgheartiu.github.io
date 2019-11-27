@@ -11,8 +11,8 @@ self.addEventListener('install', function(e) {
        '/projects/',
        '/concert-2018/',
        '/blue/',
-       '/assets/css/main.scss',
-       '/assets/css/overlay-terence.scss',
+       '/assets/css/main.css',
+       '/assets/css/overlay-terence.css',
        '/assets/files/fanchant-concert-2018.pdf',
        '/assets/js/cache-polyfill.js',
        '/assets/js/jquery-1.12.0.min.js',
@@ -28,9 +28,9 @@ self.addEventListener('install', function(e) {
        '/assets/fonts/FiraSans/woff/FiraSans-Light.woff',
        '/assets/fonts/FiraSans/woff/FiraSans-LightItalic.woff',
        '/assets/fonts/FiraSans/woff/FiraSans-Regular.woff',
-       '/assets/fonts/FiraSans/woff/FiraSans-Bold.woffs',
+       '/assets/fonts/FiraSans/woff/FiraSans-Bold.woff',
        '/assets/img/placeholder-big.jpg',
-       '/assets/img/logo.pngs'
+       '/assets/img/logo.png'
      ]);
    })
  );
