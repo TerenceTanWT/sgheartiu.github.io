@@ -48,7 +48,7 @@
 	overflow-y: scroll;
 }
 
-#overlay-banner-blue{
+#overlay-banner-blue {
 	position: absolute;
 	display: block;
 	top: 50%;
@@ -58,5 +58,11 @@
 	transform: translate(-50%,-50%);
 	-ms-transform: translate(-50%,-50%);
 	max-width: auto;
-  height: 90%;
+  	height: 90%;
+}
+
+@media only screen and (max-width: 1000px) {
+  #overlay-banner-blue {
+    width: 80%;
+  }
 }

@@ -53,11 +53,20 @@ layout: compress
     <!-- overlay-terence.css and overlay-terence.js are linked in head.html. To disable banner, simply hide in by modifying overlay-terence.css under .display -->
     <div id="overlay-blue" onclick="overlayBlueOff();">
 		<div id="overlay-banner-blue">
-			<b> Upcoming Event!</b>
+			<h3> Blue Light Event</h3>
+			Hi Singaenas,
 			<br>
-			<h3> HELLO WORLD! </h3>
+			Please use this flashing blue light for the song <b>Love Poem</b>: 
 			<br>
-			Just some text here.
+			1. Set maximum screen brightness.
+			<br>
+			2. Switch off fingerlights and lightsticks.
+			<br>
+			3. Wave your phone with the blue screen facing IU when she sings <b>Love Poem</b>.
+			<br><br>
+			To open this page in full screen, add this web page to your home screen and launch from there!
+			<br><br>
+			<font color="red"><b> [Tap to close] </b></font>
 		</div>
 	</div>
 	<script> window.onload = setTimeout(overlayBlueOn,1500); </script> <!-- 3sec delay before banner popup. Comment out this line to disable banner -->
@@ -81,7 +90,6 @@ layout: compress
 			countdown = 5000 - countdown;
 			setTimeout(startBlink, countdown)
 		}
-		window.onload = startNow();
 	</script>
 	<!-- END OF javascript functions to sync the blinking-->
 	
@@ -93,6 +101,7 @@ layout: compress
 		toggleEl.addEventListener('click', function enableNoSleep() {
 	 		toggleEl.removeEventListener('click', enableNoSleep, false);
   			noSleep.enable();
+  			startNow();
   			/* toggleEl.value = "Wake Lock is enabled";
         	document.body.style.backgroundColor = "green"; */
 	   }, false);	
