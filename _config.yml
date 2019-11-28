@@ -4,12 +4,13 @@ bio:                'Singapore IU Fan Club'
 description:        "SG &#9829 IU (Singapore Heart IU) is an IU Fan Club for Singaenas to show our love and support for our constant source of strength and inspiration!"
 reading_time:       true
 words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
+logo:               'assets/img/logo-small.png'
+background:         'assets/img/background-medium.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
 url:                //www.sgheartiu.com
 host:               0.0.0.0
+fanchant:           'assets/files/fanchant-concert-2018.pdf'
 
 # Jekyll
 permalink:          /:title/
@@ -41,6 +42,7 @@ sass:
 email:              admin@sgheartiu.com
 #twitter:            username
 facebook:           sgheartiu
+facebook-group:     1595800463977310
 #github-url:         username
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 #linkedin:          username

@@ -29,8 +29,8 @@ self.addEventListener('install', function(e) {
        '/assets/fonts/FiraSans/woff/FiraSans-LightItalic.woff',
        '/assets/fonts/FiraSans/woff/FiraSans-Regular.woff',
        '/assets/fonts/FiraSans/woff/FiraSans-Bold.woff',
-       '/assets/img/placeholder-big.jpg',
-       '/assets/img/logo.png'
+       '/assets/img/background-medium.jpg',
+       '/assets/img/logo-small.png'
      ]);
    })
  );

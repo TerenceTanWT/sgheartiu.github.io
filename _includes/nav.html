@@ -99,7 +99,7 @@
 		        {% assign domain = site.url %}
 		    {% endif %}
 		    <li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.title }}</a></li>
-		    <li><a href="/assets/files/fanchant-concert-2018.pdf">Fanchants</a></li>
+		    <li><a href="/{{ site.fanchant }}">Fanchants</a></li>
 		  {% endfor %}
 		</ul><!-- /.dl-menu -->
 	</nav><!-- /.dl-menuwrapper -->
