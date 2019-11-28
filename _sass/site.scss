@@ -84,7 +84,7 @@ body {
 	@include transition(.5s);
 	@media #{$small} {
 		//width: 100%;
-		width: 90%;
+		width: 92%;
 	    box-shadow: none;
 	}
 	@media #{$medium} {
