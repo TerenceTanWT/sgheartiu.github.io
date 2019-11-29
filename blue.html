@@ -13,6 +13,8 @@ layout: compress
     <link rel="stylesheet" href="/assets/css/overlay-terence.css">
     <script src="/assets/js/overlay-terence.js"></script>
     <script src="/assets/js/NoSleep.min.js"></script> 
+    <script src="/assets/js/jquery-1.12.0.min.js"></script> 
+    
 </head>
 <body bgcolor="#71ABFA">
 
@@ -75,6 +77,14 @@ layout: compress
 	
 	<!-- START OF javascript functions to sync the blinking-->
 	<script>
+		try {
+			if (localStorage.getItem("cacheDelay") !== null) {
+				var cacheDelay = localStorage.getItem("cacheDelay") * 1000;
+			}
+		} catch(e) {
+			/* DO NOTHING */
+		}
+		
 		function startBlink() {
 			var blinkDiv = document.getElementById("fullscreen");
 			blinkDiv.style.animation = 'blinking 5s infinite';
@@ -88,7 +98,7 @@ layout: compress
 			var millseconds = date.getTime();
 			var countdown = (millseconds % 5000);
 			countdown = 5000 - countdown;
-			setTimeout(startBlink, countdown)
+			setTimeout(startBlink, countdown + (cacheDelay % 5))
 		}
 	</script>
 	<!-- END OF javascript functions to sync the blinking-->
@@ -107,6 +117,79 @@ layout: compress
 	   }, false);	
     </script>
 	<!-- END OF NoSleep.js -->
+	
+	
+	<script>
+		function sync() {
+	    	var times = localStorage.getItem("times");
+	    	times = times + 1;
+	    	localStorage.setItem("times", times);
+	    	var data;
+	    	$.ajax({
+				dataType: "json",
+				url: "http://vip.timezonedb.com/v2.1/list-time-zone?&zone=Asia/Singapore&fields=timestamp&key=V42YUZ9NTXZU&format=json",
+				data: data,
+				timeout: 5000
+			 })
+			 .done(function(data){
+				var onlineTime = (data.zones[0].timestamp) - 28800;
+				console.log(onlineTime);
+				var localTime = (Math.floor(new Date().getTime()/1000));
+				console.log(localTime);
+				delay = onlineTime - localTime;
+				console.log(delay);
+				localStorage.setItem("times"+times, delay);
+				if (times <= 1111) {
+					setTimeout(function() { sync(); }, 1000);
+				} else {
+					calculateDelay();
+				}
+			 })
+	    }
+	    
+	    function calculateDelay() {
+	    	var delay1 = localStorage.getItem("times1");
+	    	var delay2 = localStorage.getItem("times11");
+	    	var delay3 = localStorage.getItem("times111");
+	    	var delay4 = localStorage.getItem("times1111");
+	    	var delay5 = localStorage.getItem("times11111");
+	    	var totalDelay = delay1 + delay2 + delay3 + delay4 + delay5;
+	    	
+	    	if ((totalDelay/5) == delay1) {
+	    		localStorage.setItem("cacheDelay", delay1);
+	    		clearDelayCounter();
+	    		location.reload();
+	    	}
+	    }
+	    
+	    function clearDelayCounter() {
+	    	/*localStorage.removeItem("cacheDelay");*/
+	    	localStorage.removeItem("times");
+	    	localStorage.removeItem("times1");
+	    	localStorage.removeItem("times11");
+	    	localStorage.removeItem("times111");
+	    	localStorage.removeItem("times1111");
+	    	localStorage.removeItem("times11111");
+	    	localStorage.setItem("times", "");
+	    }
+	    
+	    /*
+	    window.onload = startDelayCounter();
+	    window.onload = setTimeout(function() { sync(); }, 1000);
+	    window.onload = setTimeout(function() { calculateDelay(); }, 15000);
+	    */
+	    window.onload = function() {
+	    	try {
+	    		if (localStorage.getItem("cacheDelay") === null) {
+					clearDelayCounter();
+	    			window.onload = setTimeout(function() { sync(); }, 1000);
+				}
+			} catch(e) {
+				/* DO NOTHING */
+			}
+	    };		
+	    
+	</script>
 	
 	
     
