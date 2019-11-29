@@ -173,6 +173,7 @@ layout: compress
 			var onlineTime;
 			var localTime;
 			var delay;
+			var data;
 			/*
 			$.ajax('https://www.googleapis.com', {
     			type: 'HEAD',
@@ -188,21 +189,68 @@ layout: compress
     			}
 			});	
 			*/
-			$.ajax('https://www.sgheartiu.com/time', {
-    			type: 'HEAD',
+
+			/*
+			$.ajax('https://maps.googleapis.com/maps/api/timezone/json?location=1.3067634,103.7862349&key=XXXXXX&timestamp=1575043268', {
+    			type: 'GET',
     			timeout: 1000,
     			success: function(r,status,xhr) {
         			onlineTime = new Date (xhr.getResponseHeader('Date')).getTime()/1000;
         			localTime = new Date().getTime()/1000;
         			delay = onlineTime - localTime;
-        			alert(delay);
+        			alert(xhr.getResponseHeader('Date'));
     			},
     			error: function() {
-        			alert("FAIL!!");
+        			alert("FAIL");
         			alert(xhr.getAllResponseHeaders());
-        			
     			}
 			});
+			*/
+			
+			
+			$.ajax({
+				dataType: "json",
+				url: "http://vip.timezonedb.com/v2.1/list-time-zone?&zone=Asia/Singapore&fields=timestamp&key=V42YUZ9NTXZU&format=json",
+				data: data,
+				timeout: 5000
+			 })
+			 .done(function(data){
+				var onlineTime = data.zones[0].timestamp;
+				var onlineTimeMod5 = onlineTime % 5;
+				console.log(onlineTimeMod5);
+				localTime = Math.floor(new Date().getTime()/1000);
+				var localTimeMod5 = localTime % 5;
+				console.log(localTimeMod5);
+				delay = Math.abs(onlineTime - (localTime+28800));
+				console.log(delay);
+				alert(delay);
+			 })
+			 .fail(function (jqXHR, textStatus){
+				alert("FAIL");
+			 });
+			 
+			 
+			 /*
+			 $.ajax({
+				dataType: "json",
+				url: "https://timezoneapi.io/api/timezone/?Asia/Singapore&token=aEUInHwFtCbq",
+				data: data,
+				timeout: 5000
+			 })
+			 .done(function(data){
+				var time = data.data.datetime.date_time;
+				var onlineTime = (new Date(time).getTime()/1000) % 5;
+				console.log(onlineTime);
+				localTime = (new Date().getTime()/1000) % 5;
+				console.log(localTime);
+				delay = onlineTime - localTime;
+				console.log(delay);
+				alert(delay);
+			 })
+			 .fail(function (jqXHR, textStatus){
+				alert("FAIL");
+			 });
+			 */
 		}
 
 		/** 
