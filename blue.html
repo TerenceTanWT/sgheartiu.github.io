@@ -139,8 +139,8 @@ layout: compress
 				delay = onlineTime - localTime;
 				console.log(delay);
 				localStorage.setItem("times"+times, delay);
-				if (times <= 1111) {
-					setTimeout(function() { sync(); }, 1000);
+				if (times <= 111111111) {
+					setTimeout(function() { sync(); }, 2000);
 				} else {
 					calculateDelay();
 				}
@@ -153,9 +153,14 @@ layout: compress
 	    	var delay3 = localStorage.getItem("times111");
 	    	var delay4 = localStorage.getItem("times1111");
 	    	var delay5 = localStorage.getItem("times11111");
-	    	var totalDelay = delay1 + delay2 + delay3 + delay4 + delay5;
+	    	var delay6 = localStorage.getItem("times111111");
+	    	var delay7 = localStorage.getItem("times1111111");
+	    	var delay8 = localStorage.getItem("times11111111");
+	    	var delay9 = localStorage.getItem("times111111111");
+	    	var delay10 = localStorage.getItem("times1111111111");
+	    	var totalDelay = delay1 + delay2 + delay3 + delay4 + delay5 + delay6 + delay7 + delay8 + delay9 + delay10;
 	    	
-	    	if ((totalDelay/5) == delay1) {
+	    	if ((totalDelay/10) == delay1) {
 	    		localStorage.setItem("cacheDelay", delay1);
 	    		alert('Delay set to ' + delay1);
 	    		location.reload();
@@ -170,7 +175,11 @@ layout: compress
 	    	localStorage.removeItem("times111");
 	    	localStorage.removeItem("times1111");
 	    	localStorage.removeItem("times11111");
-	    	localStorage.setItem("times", "");
+	    	localStorage.removeItem("times111111");
+	    	localStorage.removeItem("times1111111");
+	    	localStorage.removeItem("times11111111");
+	    	localStorage.removeItem("times111111111");
+	    	localStorage.removeItem("times1111111111");
 	    }
 	    
 	    window.onload = function() {
