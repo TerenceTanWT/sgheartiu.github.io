@@ -198,8 +198,9 @@ layout: compress
         			alert(delay);
     			},
     			error: function() {
-        			alert("FAIL!");
-        			alert(xhr.getResponseHeader('Date'));
+        			alert("FAIL!!");
+        			alert(xhr.getAllResponseHeaders());
+        			
     			}
 			});
 		}
