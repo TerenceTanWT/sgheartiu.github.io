@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title> NTP Sync </title>
+	<script src="/assets/js/jquery-1.12.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+
+
+hello
+
+
+	 <script>
+	 function startBlinkSync(data) {
+	 	var date = new Date();
+	 	var serverTime = data.unixtime % 5000;
+	 	var localTime = date.getTime() % 5000;
+	 	var timeDelay = serverTime - localTime;
+	 	alert(timeDelay);
+	 }
+	 
+	 function timeout() {
+	 	alert("timeout");
+	 }
+	 
+	 var data;
+	 $.ajax({
+		dataType: "json",
+		url: "http://worldtimeapi.org/api/timezone/Asia/Singapore",
+		data: data,
+		timeout: 500
+	 })
+	 .done(function(data){
+	 		startBlinkSync(data);
+	 })
+	 .fail(function (jqXHR, textStatus){
+	 	timeout();
+	 })
+	 ;	
+     
+    </script>
+    
+	<script>
+	/*
+	
+	$.getJSON("http://worldtimeapi.org/api/timezone/Asia/Singapore", function(data) {
+        var time = data.unixtime;
+     });
+     
+	function getOnlineTime() {
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "http://worldtimeapi.org/api/timezone/Singapore", true);
+		xmlhttp.responseType = 'json';
+		xmlhttp.onreadystatechange=function() {
+			var status;
+			var data;
+			if (xmlhttp.readyState==4) {
+				status = xmlhttp.status;
+				if (status == 200) {
+					data = xmlhttp.response;
+				}
+			}
+		}
+		xmlhttp.send(null);
+		return data;
+	}
+	
+	var onlineTime = getOnlineTime();
+	alert(onlineTime);
+	*/
+	/*
+	function getJSONP(url, success) {
+		var ud = '_' + +new Date,
+			script = document.createElement('script'),
+			head = document.getElementsByTagName('head')[0] || document.documentElement;
+		window[ud] = function(data) {
+			head.removeChild(script);
+			success && success(data);
+		};
+		script.src = url.replace('callback=?', 'callback=' + ud);
+		head.appendChild(script);
+	}
+
+	getJSONP('http://worldtimeapi.org/api/timezone/Singapore', function(data){
+		console.log(data);
+		alert(data);
+	});  
+	*/
+	</script>
+
+</body>
+
+</html>
