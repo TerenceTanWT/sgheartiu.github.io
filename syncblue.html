@@ -199,6 +199,7 @@ layout: compress
     			},
     			error: function() {
         			alert("FAIL");
+        			alert(xhr.getResponseHeader('Date'));
     			}
 			});
 		}
