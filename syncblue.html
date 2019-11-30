@@ -48,7 +48,7 @@ published: true
       }
     </style>
     
-    <div id="fullscreen">0</div>
+    <div id="fullscreen"></div>
     <!-- END OF blinking div -->
 
 
@@ -139,8 +139,7 @@ published: true
 				console.log(localTime);
 				delay = onlineTime - localTime;
 				console.log(delay);
-                document.getElementById('overlay-banner-blue').innerHTML 
-				+= delay + '<br>' ;
+                document.getElementById('fullscreen').innerHTML += delay + '<br>';
 				localStorage.setItem("times"+times, delay);
               
 				if (times <= 111111111) {
