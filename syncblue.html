@@ -139,7 +139,10 @@ published: true
 				console.log(localTime);
 				delay = onlineTime - localTime;
 				console.log(delay);
+                document.getElementById('overlay-banner-blue').innerHTML 
+				+= delay + '<br>' ;
 				localStorage.setItem("times"+times, delay);
+              
 				if (times <= 111111111) {
 					setTimeout(function() { sync(); }, 2000);
 				} else {
